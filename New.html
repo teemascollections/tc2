@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══════════════════════════════════════════════
+       SEO — EDIT THESE FOR YOUR STORE
+       ═══════════════════════════════════════════════ -->
+  <title>Teema's Collections | Luxury Thrift Fashion Nigeria</title>
+  <meta name="description" content="Premium thrift and vintage fashion at affordable prices. Quality-checked pieces. Nationwide delivery across Nigeria. Shop hoodies, tees, denim, jerseys and sneakers." />
+  <meta name="keywords" content="thrift store Nigeria, vintage fashion Lagos, thrift clothes Nigeria, affordable fashion Nigeria, Teema Collections" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Teema's Collections" />
+  <link rel="canonical" href="https://teemascollections.netlify.app/" />
+
+  <!-- Open Graph (for WhatsApp/Instagram link previews) -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://teemascollections.netlify.app/" />
+  <meta property="og:title"       content="Teema's Collections | Luxury Thrift Fashion Nigeria" />
+  <meta property="og:description" content="Premium thrift and vintage fashion. Quality-checked pieces. Nationwide delivery." />
+  <meta property="og:image"       content="https://teemascollections.netlify.app/preview.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Teema's Collections | Luxury Thrift Fashion Nigeria" />
+  <meta name="twitter:description" content="Premium thrift and vintage fashion. Quality-checked pieces. Nationwide delivery." />
+
+  <!-- Google Search Console verification -->
+  <!-- REPLACE the content value below with YOUR verification code from Google Search Console -->
+  <!-- <meta name="google-site-verification" content="PASTE_YOUR_CODE_HERE" /> -->
+
+  <!-- Structured Data for Google (helps appear in rich results) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ClothingStore",
+    "name": "Teema's Collections",
+    "description": "Premium thrift and vintage fashion at affordable prices. Nationwide delivery across Nigeria.",
+    "url": "https://teemascollections.netlify.app",
+    "areaServed": "Nigeria",
+    "priceRange": "₦₦",
+    "currenciesAccepted": "NGN",
+    "paymentAccepted": "Credit Card, Debit Card, Bank Transfer"
+  }
+  </script>
+  <!-- ═══════════════════════════════════════════════ -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #080808;
+      --surface: #0f0f0f;
+      --card:    #131313;
+      --border:  #1e1e1e;
+      --gold:    #c9a96e;
+      --gold-lt: #e2c99a;
+      --text:    #f0ebe0;
+      --muted:   #666;
+      --soft:    #999;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.35;
+    }
+
+    #setup-banner {
+      display: none;
+      background: #1c1400;
+      border-bottom: 1px solid var(--gold);
+      color: var(--gold);
+      text-align: center;
+      padding: 12px 20px;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      line-height: 1.9;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 28px;
+      background: rgba(8,8,8,0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-brand { text-decoration: none; }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--text);
+      display: block;
+    }
+    .nav-tagline {
+      font-size: 8.5px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .nav-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.4; transform: scale(0.7); }
+    }
+
+    .hero {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 28px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-glow {
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,169,110,0.07) 0%, transparent 65%);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    .hero-line {
+      width: 1px; height: 60px;
+      background: linear-gradient(to bottom, transparent, var(--gold));
+      margin: 0 auto 32px;
+      animation: fadeDown 1s ease forwards;
+      opacity: 0;
+    }
+    .hero-eyebrow {
+      font-size: 9px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+      animation: fadeUp 0.8s 0.3s ease forwards;
+      opacity: 0;
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(58px, 13vw, 108px);
+      font-weight: 300;
+      line-height: 0.92;
+      letter-spacing: -2px;
+      margin-bottom: 28px;
+      animation: fadeUp 0.8s 0.5s ease forwards;
+      opacity: 0;
+    }
+    .hero-title em { font-style: italic; color: var(--gold); }
+    .hero-sub {
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      line-height: 2.2;
+      max-width: 320px;
+      margin: 0 auto 52px;
+      animation: fadeUp 0.8s 0.7s ease forwards;
+      opacity: 0;
+    }
+    .hero-cta {
+      display: inline-block;
+      padding: 13px 44px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      transition: background 0.3s, color 0.3s;
+      animation: fadeUp 0.8s 0.9s ease forwards;
+      opacity: 0;
+    }
+    .hero-cta:hover { background: var(--gold); color: var(--bg); }
+    .hero-scroll {
+      position: absolute;
+      bottom: 32px; left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 8px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      animation: fadeUp 1s 1.2s ease forwards;
+      opacity: 0;
+    }
+    .hero-scroll-bar {
+      width: 1px; height: 48px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%   { transform: scaleY(1);   transform-origin: top; }
+      50%  { transform: scaleY(0.4); transform-origin: top; }
+      100% { transform: scaleY(1);   transform-origin: top; }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      max-width: 320px;
+      margin: 0 auto 64px;
+    }
+    .divider-line { flex: 1; height: 1px; background: var(--border); }
+    .divider-diamond {
+      width: 6px; height: 6px;
+      border: 1px solid var(--gold);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    .shop-section {
+      padding: 90px 28px 100px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .section-header { text-align: center; margin-bottom: 56px; }
+    .section-label {
+      font-size: 9px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 300;
+      letter-spacing: -0.5px;
+    }
+
+    .filters {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+    .filter-btn {
+      padding: 7px 18px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 9px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 28px;
+    }
+    .product-card {
+      position: relative;
+      background: var(--card);
+      border: 1px solid var(--border);
+      transition: border-color 0.3s;
+    }
+    .product-card:hover { border-color: #2a2a2a; }
+    .product-card.sold-out .product-img-wrap::after {
+      content: 'SOLD OUT';
+      position: absolute;
+      inset: 0;
+      background: rgba(8,8,8,0.72);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      letter-spacing: 5px;
+      color: var(--soft);
+    }
+    .product-img-wrap {
+      position: relative;
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      background: var(--surface);
+    }
+    .product-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+      display: block;
+    }
+    .product-card:not(.sold-out):hover .product-img-wrap img {
+      transform: scale(1.06);
+    }
+    .product-badge {
+      position: absolute;
+      top: 12px; left: 12px;
+      background: rgba(8,8,8,0.85);
+      border: 1px solid var(--border);
+      color: var(--gold);
+      font-size: 8px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      backdrop-filter: blur(4px);
+    }
+    .product-info { padding: 18px 18px 20px; }
+    .product-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+    .product-desc {
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 14px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .product-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--gold-lt);
+      margin-bottom: 18px;
+    }
+    .buy-btn {
+      display: block;
+      width: 100%;
+      padding: 11px 0;
+      text-align: center;
+      border: 1px solid var(--gold);
+      background: transparent;
+      color: var(--gold);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.25s, color 0.25s;
+    }
+    .buy-btn:hover { background: var(--gold); color: var(--bg); }
+    .buy-btn.sold {
+      border-color: var(--border);
+      color: var(--muted);
+      pointer-events: none;
+    }
+
+    .state-box {
+      text-align: center;
+      padding: 80px 28px;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      line-height: 2.5;
+    }
+
+    .announcement {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 14px 28px;
+      text-align: center;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--soft);
+    }
+    .announcement span { color: var(--gold); }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 56px 28px 44px;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px;
+      font-weight: 300;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .footer-tagline {
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      line-height: 2.4;
+      margin-bottom: 32px;
+    }
+    .footer-bottom {
+      font-size: 10px;
+      color: var(--border);
+      letter-spacing: 1.5px;
+      margin-top: 32px;
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 16px 20px; }
+      .hero-title { letter-spacing: -1px; }
+      .shop-section { padding: 70px 16px 80px; }
+      .products-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      .product-name { font-size: 17px; }
+      .product-price { font-size: 18px; }
+      .product-info { padding: 12px 12px 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="setup-banner">
+    Open <strong>index.html</strong>, find <strong>SHEET_CSV_URL</strong> near the bottom, and replace it with your published Google Sheet CSV link.
+  </div>
+
+  <nav>
+    <a class="nav-brand" href="#home">
+      <span class="nav-logo">Teema's Collections</span>
+      <span class="nav-tagline">Luxury Thrift Fashion &middot; Nigeria</span>
+    </a>
+    <div class="nav-dot"></div>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="hero-glow"></div>
+    <div class="hero-line"></div>
+    <p class="hero-eyebrow">New Arrivals &middot; Quality Checked &middot; Ships Nationwide</p>
+    <h1 class="hero-title">Teema's<br><em>Collections</em></h1>
+    <p class="hero-sub">Hand-picked thrift &amp; vintage pieces.<br>Every item inspected before listing.</p>
+    <a href="#shop" class="hero-cta">Browse The Collection</a>
+    <div class="hero-scroll">
+      Scroll
+      <div class="hero-scroll-bar"></div>
+    </div>
+  </section>
+
+  <section class="shop-section" id="shop">
+    <div class="section-header">
+      <p class="section-label">The Collection</p>
+      <h2 class="section-title">Available Pieces</h2>
+    </div>
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-diamond"></div>
+      <div class="divider-line"></div>
+    </div>
+    <div class="filters" id="filters">
+      <button class="filter-btn active" data-cat="all">All</button>
+    </div>
+    <div id="products-wrap">
+      <div class="state-box">Loading collection&hellip;</div>
+    </div>
+  </section>
+
+  <div class="announcement">
+    Free delivery on orders above <span>&#8358;20,000</span> &nbsp;&middot;&nbsp;
+    DM on Instagram for enquiries &nbsp;&middot;&nbsp;
+    Delivery: <span>2&ndash;4 business days</span>
+  </div>
+
+  <footer>
+    <div class="footer-logo">Teema's Collections</div>
+    <p class="footer-tagline">
+      Luxury thrift at prices that make sense.<br>
+      Nationwide delivery &middot; Quality guaranteed
+    </p>
+    <div class="footer-bottom">
+      &copy; 2025 Teema's Collections &middot; All Rights Reserved
+    </div>
+  </footer>
+
+  <script>
+    // ================================================================
+    //  STEP 1: PASTE YOUR GOOGLE SHEET CSV URL BELOW
+    //  (Instructions on how to get this are in the setup guide PDF)
+    // ================================================================
+    const SHEET_CSV_URL = https://docs.google.com/spreadsheets/d/e/2PACX-1vR9a5ROp9IVB9ykk-K3lUO9tGBSlDJNjZLFeIaKlm2BsLJNnyhe0dOU1gPHQtwOvYB7TIVHyXmI1XYR/pub?gid=0&single=true&output=csv;
+    // ================================================================
+
+    let allProducts = [];
+    let activeCategory = 'all';
+
+    function formatPrice(raw) {
+      const num = parseFloat(String(raw).replace(/[^0-9.]/g, ''));
+      if (isNaN(num)) return raw;
+      return '\u20A6' + num.toLocaleString('en-NG');
+    }
+
+    function splitCSVLine(line) {
+      const result = [];
+      let cur = '', inQ = false;
+      for (const ch of line) {
+        if (ch === '"') { inQ = !inQ; }
+        else if (ch === ',' && !inQ) { result.push(cur); cur = ''; }
+        else cur += ch;
+      }
+      result.push(cur);
+      return result.map(v => v.trim());
+    }
+
+    function parseCSV(text) {
+      const rows = [];
+      const lines = text.trim().split('\n');
+      if (lines.length < 2) return rows;
+      const headers = splitCSVLine(lines[0]).map(h =>
+        h.toLowerCase().trim().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '')
+      );
+      for (let i = 1; i < lines.length; i++) {
+        const vals = splitCSVLine(lines[i]);
+        if (vals.every(v => !v.trim())) continue;
+        const obj = {};
+        headers.forEach((h, idx) => obj[h] = (vals[idx] || '').trim());
+        if (obj.name) rows.push(obj);
+      }
+      return rows;
+    }
+
+    function isSoldOut(p) {
+      const s = (p.status || '').toLowerCase();
+      return s.includes('sold') || s.includes('out') || s === '0';
+    }
+
+    function escHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function buildFilters(products) {
+      const cats = ['All', ...new Set(
+        products.map(p => p.category).filter(Boolean).map(c => c.trim())
+      )];
+      const el = document.getElementById('filters');
+      el.innerHTML = cats.map(cat =>
+        `<button class="filter-btn ${cat==='All'?'active':''}" data-cat="${cat.toLowerCase()}">${cat}</button>`
+      ).join('');
+      el.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          el.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          activeCategory = btn.dataset.cat;
+          renderProducts();
+        });
+      });
+    }
+
+    function renderProducts() {
+      const wrap = document.getElementById('products-wrap');
+      const filtered = activeCategory === 'all'
+        ? allProducts
+        : allProducts.filter(p => (p.category||'').toLowerCase().trim() === activeCategory);
+
+      if (!filtered.length) {
+        wrap.innerHTML = `<div class="state-box">No items in this category yet.</div>`;
+        return;
+      }
+
+      wrap.innerHTML = `<div class="products-grid">${filtered.map(p => {
+        const sold = isSoldOut(p);
+        return `
+          <div class="product-card ${sold ? 'sold-out' : ''}">
+            <div class="product-img-wrap">
+              ${p.image ? `<img src="${escHtml(p.image)}" alt="${escHtml(p.name)}" loading="lazy" onerror="this.style.opacity='0'">` : ''}
+              ${p.category ? `<span class="product-badge">${escHtml(p.category)}</span>` : ''}
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">${escHtml(p.name)}</h3>
+              ${p.description ? `<p class="product-desc">${escHtml(p.description)}</p>` : ''}
+              <p class="product-price">${formatPrice(p.price)}</p>
+              ${sold
+                ? `<span class="buy-btn sold">Sold Out</span>`
+                : `<a class="buy-btn" href="${escHtml(p.payment_link||'#')}" target="_blank" rel="noopener">Buy Now</a>`}
+            </div>
+          </div>`;
+      }).join('')}</div>`;
+    }
+
+    async function loadProducts() {
+      const wrap = document.getElementById('products-wrap');
+      if (!SHEET_CSV_URL || SHEET_CSV_URL === https://docs.google.com/spreadsheets/d/e/2PACX-1vR9a5ROp9IVB9ykk-K3lUO9tGBSlDJNjZLFeIaKlm2BsLJNnyhe0dOU1gPHQtwOvYB7TIVHyXmI1XYR/pub?gid=0&single=true&output=csv) {
+        document.getElementById('setup-banner').style.display = 'block';
+        wrap.innerHTML = `<div class="state-box">Connect your Google Sheet to display products.<br>See the setup guide PDF for instructions.</div>`;
+        return;
+      }
+      try {
+        const res = await fetch(SHEET_CSV_URL);
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const text = await res.text();
+        allProducts = parseCSV(text);
+        if (!allProducts.length) {
+          wrap.innerHTML = `<div class="state-box">Sheet connected. Add rows to your Google Sheet to see them here.</div>`;
+          return;
+        }
+        buildFilters(allProducts);
+        renderProducts();
+      } catch(e) {
+        console.error(e);
+        wrap.innerHTML = `<div class="state-box">Could not load products.<br>Make sure your Google Sheet is published publicly as CSV.</div>`;
+      }
+    }
+
+    document.querySelector('.hero-cta').addEventListener('click', e => {
+      e.preventDefault();
+      document.getElementById('shop').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    loadProducts();
+  </script>
+</body>
+</html>
